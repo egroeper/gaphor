@@ -6,3 +6,4 @@ po/gaphor.pot
 html
 *.swp
 *.egg
+RELEASE-VERSION

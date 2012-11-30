@@ -5,7 +5,7 @@ Run 'python setup.py develop' to set up a development environment, including
 dependencies.
 """
 
-VERSION = '0.17.1'
+from version import get_git_version
 
 import os
 import sys
@@ -49,7 +49,7 @@ build_py_with_sub_commands.sub_commands.append(('build_uml', None))
 
 setup(
     name='gaphor',
-    version=VERSION,
+    version=get_git_version(),
     url='http://gaphor.sourceforge.net',
     author='Arjan J. Molenaar',
     author_email='arjanmol@users.sourceforge.net',
