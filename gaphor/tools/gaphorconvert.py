@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import gaphor
+from gaphor.application import Application
 from gaphor.storage import storage
 import gaphor.UML as UML
 
@@ -58,6 +59,7 @@ if not args:
     sys.exit(1)
 
 
+Application.init()
 factory = UML.ElementFactory()
 
 

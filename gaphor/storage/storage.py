@@ -19,7 +19,7 @@ import gaphas
 
 from gaphor import UML
 from gaphor.UML.collection import collection
-from gaphor.UML.elementfactory import ElementChangedEventBlocker
+from gaphor.UML.elementfactory import ElementChangedEventBlocker, ElementFactoryService
 from gaphor import diagram
 from gaphor.storage import parser
 from gaphor.application import Application, NotInitializedError
@@ -294,7 +294,8 @@ def load_elements_generator(elements, factory, gaphor_version=None):
         if st: yield st
         elem.element.postload()
 
-    factory.notify_model()
+    if isinstance(factory,ElementFactoryService):
+        factory.notify_model()
 
 
 def load(filename, factory, status_queue=None):
